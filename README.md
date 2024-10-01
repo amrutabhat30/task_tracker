@@ -24,7 +24,7 @@ This project is a Django application for task management, using MySQL as the dat
 
 ## Setup
 
-### 1. Clone the Repositoryvggggggggg
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/yourusername/task_tracker.git
 cd task_tracker
