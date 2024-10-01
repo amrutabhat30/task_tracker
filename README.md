@@ -26,8 +26,11 @@ This project is a Django application for task management, using MySQL as the dat
 ```bash
 git clone https://github.com/yourusername/task_tracker.git
 cd task_tracker
-
-### 2. Build the Docker Image
+### 1. Clone the Repository
+```bash
+### 1. Clone the Repository
+```bash
+_### 2. Build the Docker Image_
 To build the Docker image, execute:
 
 ```bash
