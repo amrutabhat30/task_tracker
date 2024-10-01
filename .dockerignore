@@ -1,0 +1,4 @@
+# ignore files which we dont want to copy to docker
+**/*.pyc
+**/*__pycache__/
+venv
