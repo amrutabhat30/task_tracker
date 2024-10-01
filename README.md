@@ -67,4 +67,19 @@ DELETE /tasks/{id}/: Delete a task by ID.
 
 ### 8. Screenshots
 #### Updating Task with Success resposne
-https://private-user-images.githubusercontent.com/17699193/372582278-b2a01f77-7421-47a7-90d7-04d32a7b9f77.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4MDQ1NjUsIm5iZiI6MTcyNzgwNDI2NSwicGF0aCI6Ii8xNzY5OTE5My8zNzI1ODIyNzgtYjJhMDFmNzctNzQyMS00N2E3LTkwZDctMDRkMzJhN2I5Zjc3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAxVDE3Mzc0NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYwMWMzNTA0YzIwMjg0MDNhMDEzYWE1NTIxYTg4Y2Y1OGI2M2E1YWIzZjU4YmRhMDMzZGEwNjA1N2MxNzE3YzAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.2R7pllTtBWY9_OeDhRZTEesEIYvKL932pKcGjAwnHK0
+![update_task](https://private-user-images.githubusercontent.com/17699193/372582278-b2a01f77-7421-47a7-90d7-04d32a7b9f77.png)
+
+#### Deleting a task that does not exist
+![delete_task](https://private-user-images.githubusercontent.com/17699193/372582291-5df79401-ac55-454c-9533-f21429dba80e.png)
+
+#### Get all tasks
+![get_tasks](https://private-user-images.githubusercontent.com/17699193/372582299-952a0e6d-ada0-4efa-8f93-b7f8798bdc43.png)
+
+#### Create task
+![create_task](https://private-user-images.githubusercontent.com/17699193/372582305-998dc738-d1e1-4a6d-9e4e-526375eebd48.png)
+
+#### Create task without required field title
+![create_task_error](https://private-user-images.githubusercontent.com/17699193/372582312-4bdeeb35-a903-47ad-b22e-593da9184991.png)
+
+#### Get a task
+![get_task](https://private-user-images.githubusercontent.com/17699193/372582308-d4317c00-b18b-4afc-b178-11495295a99f.png)
