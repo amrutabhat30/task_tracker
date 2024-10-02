@@ -17,9 +17,8 @@ This project is a Django application for task management, using MySQL as the dat
 
 
 ## Requirements
-- Docker
-- 
 - MySQL
+- Python 3.12
 
 ## Setup
 
@@ -48,30 +47,30 @@ SQL_DETAILS = {
     'PORT': <PORT>,
 }
 ```
-
-### 3. Build the Docker Image
-To build the Docker image, execute:
+### 4. Install the dependencies and requirements
 ```bash
-docker build -t task_tracker .
+sudo apt-get update 
+sudo apt-get install -y build-essential python3-dev 
+pip install -r requirements.txt 
 ```
 
-### 4. Start the Docker Containers
-Use Docker Compose to start the application and the database:
+### 5. Run the application using uwsgi
 ```bash
-docker run -d -p 8000:8000 <container_id>
-```
-### 5. Access the Application
-Once the containers are running, you can access the application at:
-```bash
-http://<docker_ip_address>:8000
+uwsgi --http :8000 --ini ./server/uwsgi/develop.ini --honour-stdin
 ```
 
-### 6. And the Swagger documentation at:
+### 6. Access the Application
+You can access the application at:
 ```bash
-http://<docker_ip_address>:8000/swagger/
+http://localhost:8000
 ```
 
-### 7. API Endpoints
+### 7. And the Swagger documentation at:
+```bash
+http://localhost:8000/swagger/
+```
+
+### 8. API Endpoints
 ```bash
 GET /tasks/: Retrieve a list of tasks.
 GET /tasks/{id}/: Retrieve a specific task by ID.
@@ -80,7 +79,7 @@ PUT /tasks/{id}/: Update an existing task by ID.
 DELETE /tasks/{id}/: Delete a task by ID.
 ```
 
-### 8. Screenshots
+### 9. Screenshots
 #### Updating Task with Success resposne
 ![update_task](https://private-user-images.githubusercontent.com/17699193/372582278-b2a01f77-7421-47a7-90d7-04d32a7b9f77.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4MDU1MDAsIm5iZiI6MTcyNzgwNTIwMCwicGF0aCI6Ii8xNzY5OTE5My8zNzI1ODIyNzgtYjJhMDFmNzctNzQyMS00N2E3LTkwZDctMDRkMzJhN2I5Zjc3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAxVDE3NTMyMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM5NDllZGUxZTYwZjY0NjVmYTI5ZWQwMGM1ZTQwMjkwMjQyNzFkMzY4MzQxNjIwZWFlNTAyNzgwNmUxZGFmMDkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.g66yO7BZV3irqsV2DhsFgk095D09MNLQrLNKsWE1p7s)
 
