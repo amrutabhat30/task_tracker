@@ -49,7 +49,9 @@ SQL_DETAILS = {
 }
 ```
 ### 4. Run the application using uwsgi
+```bash
 uwsgi --http :8000 --ini ./server/uwsgi/develop.ini --honour-stdin
+```
 
 ### 5. Access the Application
 You can access the application at:
