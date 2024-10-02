@@ -47,12 +47,14 @@ SQL_DETAILS = {
     'DB_NAME' : <DB_NAME>,
     'PORT': <PORT>,
 }
+```
 
 ### 3. Build the Docker Image
 To build the Docker image, execute:
 ```bash
 docker build -t task_tracker .
 ```
+
 ### 4. Start the Docker Containers
 Use Docker Compose to start the application and the database:
 ```bash
