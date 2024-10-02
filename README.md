@@ -18,8 +18,8 @@ This project is a Django application for task management, using MySQL as the dat
 
 ## Requirements
 - Docker
-- Docker Compose
-- Python 3.12 or later
+- 
+- MySQL
 
 ## Setup
 

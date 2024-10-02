@@ -1,35 +1,31 @@
-# Use the official Ubuntu 22.04 image
-FROM ubuntu:22.04
+# Use Python 3.12 as the base image
+FROM python:3.12-slim
 
-# Install system dependencies and Python 3.12
-RUN apt-get update && apt-get install -y \
-    software-properties-common \
-    && add-apt-repository ppa:deadsnakes/ppa \
-    && apt-get update && apt-get install -y \
-    python3.12 python3.12-venv python3.12-dev python3-pip \
-    gcc libpq-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-# Upgrade pip for Python 3.12
-RUN python3.12 -m pip install --upgrade pip
-
-# Create and set the working directory
+# Set the working directory to /task_tracker
 WORKDIR /task_tracker
 
-# Copy the requirements file into the container
-COPY requirements.txt /task_tracker/
+# Copy the requirements.txt to the container and install dependencies
+COPY requirements.txt ./
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3-dev \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apt-get remove --purge -y build-essential python3-dev \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies with python3.12
-RUN python3.12 -m pip install -r requirements.txt
+# Copy the entire task_tracker project to the container
+COPY . .
 
-# Copy the rest of your application code into the container
-COPY . /task_tracker/
-
-# Expose the port your app runs on (default Django port is 8000)
+# Expose the port that the uWSGI server will run on
 EXPOSE 8000
 
-WORKDIR /home/ubuntu/task_tracker/server/uwsgi
+# Set the work directory
+WORKDIR /task_tracker/server/uwsgi
 
 # Command to run the application with python3.12
 CMD ["uwsgi", "--ini", "develop.ini"]
