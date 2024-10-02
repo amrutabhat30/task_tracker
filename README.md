@@ -15,7 +15,6 @@ This project is a Django application for task management, using MySQL as the dat
 - Paginated task retrieval.
 - Built with Django REST Framework and documented with Swagger.
 
-##
 
 ## Requirements
 - Docker
@@ -30,30 +29,37 @@ git clone https://github.com/yourusername/task_tracker.git
 cd task_tracker
 ```
 
-### 2. Build the Docker Image
-To build the Docker image, execute:
+### 2. Set up MySQL database
+Install and configure MySQL server and run the following command
 ```bash
-docker build -t task_tracker .
-```
-### 3. Start the Docker Containers
-Use Docker Compose to start the application and the database:
-```bash
-docker run -d -p 8000:8000 <container_id>
-```
-### 4. Access the Application
-Once the containers are running, you can access the application at:
-```bash
-http://<docker_ip_address>:8000
+mysql -u username -p password < ./migrations/tasks/create_tasks_table.sql
 ```
 
-### 5. And the Swagger documentation at:
+### 3. Update Database credentials in settings
 ```bash
-http://<docker_ip_address>:8000/swagger/
+cd ./server/settings/develop.py
+
+SQL_DETAILS = {
+    # 'SQL_USER' : os.environ.get("JWT_RESOURCE_ID"),
+    'USER': <USER>,
+    'PASSWORD': <PASSWORD>,
+    'HOST' : <HOST>,
+    'DB_NAME' : <DB_NAME>,
+    'PORT': <PORT>,
+}
+```
+### 4. Run the application using uwsgi
+uwsgi --http :8000 --ini ./server/uwsgi/develop.ini --honour-stdin
+
+### 5. Access the Application
+You can access the application at:
+```bash
+http://localhost:8000
 ```
 
-### 6. Run the migrations
+### 6. And the Swagger documentation at:
 ```bash
-mysql -u username -p database_name < ./task_tracker/migrations/tasks/create_tasks_table.sql
+http://localhost:8000/swagger/
 ```
 
 ### 7. API Endpoints
