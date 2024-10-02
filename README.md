@@ -47,21 +47,26 @@ SQL_DETAILS = {
     'DB_NAME' : <DB_NAME>,
     'PORT': <PORT>,
 }
-```
-### 4. Run the application using uwsgi
-```bash
-uwsgi --http :8000 --ini ./server/uwsgi/develop.ini --honour-stdin
-```
 
-### 5. Access the Application
-You can access the application at:
+### 3. Build the Docker Image
+To build the Docker image, execute:
 ```bash
-http://localhost:8000
+docker build -t task_tracker .
+```
+### 4. Start the Docker Containers
+Use Docker Compose to start the application and the database:
+```bash
+docker run -d -p 8000:8000 <container_id>
+```
+### 5. Access the Application
+Once the containers are running, you can access the application at:
+```bash
+http://<docker_ip_address>:8000
 ```
 
 ### 6. And the Swagger documentation at:
 ```bash
-http://localhost:8000/swagger/
+http://<docker_ip_address>:8000/swagger/
 ```
 
 ### 7. API Endpoints
