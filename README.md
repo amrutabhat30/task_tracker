@@ -39,7 +39,7 @@ You can access the application at:
 http://localhost:8000
 ```
 MySQL Database
-```
+```bash
 localhost:3306
 ```
 
