@@ -6,8 +6,8 @@ This project is a Django application for task management, using MySQL as the dat
 - [Features](#features)
 - [Requirements](#requirements)
 - [Setup](#setup)
-- [SQL Migration File](#sql-migration-file)
 - [API Endpoints](#api-endpoints)
+- [Screenshots](#screenshots)
 
 
 ## Features
@@ -48,7 +48,7 @@ localhost:3306
 http://localhost:8000/swagger/
 ```
 
-### 5. API Endpoints
+## API Endpoints
 ```bash
 GET /tasks/: Retrieve a list of tasks.
 GET /tasks/{id}/: Retrieve a specific task by ID.
@@ -57,7 +57,7 @@ PUT /tasks/{id}/: Update an existing task by ID.
 DELETE /tasks/{id}/: Delete a task by ID.
 ```
 
-### 6. Screenshots
+## Screenshots
 
 #### Create task
 ![create_task](https://private-user-images.githubusercontent.com/17699193/372582305-998dc738-d1e1-4a6d-9e4e-526375eebd48.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg5OTA3MjksIm5iZiI6MTcyODk5MDQyOSwicGF0aCI6Ii8xNzY5OTE5My8zNzI1ODIzMDUtOTk4ZGM3MzgtZDFlMS00YTZkLTllNGUtNTI2Mzc1ZWViZDQ4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDE1VDExMDcwOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYxOTMwZGNkNWEwNjA3ZDNjNTYwMmNjZmIyMTM0NTk3M2ZlOWRlOTliM2YwOWE1N2Y2YmVlZTVjMGEyM2UyZDcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.FwdkJikr7UX4lPTa6qFjJ6KJkHP9v73QtsLrdjhcwFA)
@@ -76,12 +76,3 @@ DELETE /tasks/{id}/: Delete a task by ID.
 
 #### Deleting a task that does not exist
 ![delete_task](https://private-user-images.githubusercontent.com/17699193/372582291-5df79401-ac55-454c-9533-f21429dba80e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg5OTA3MjksIm5iZiI6MTcyODk5MDQyOSwicGF0aCI6Ii8xNzY5OTE5My8zNzI1ODIyOTEtNWRmNzk0MDEtYWM1NS00NTRjLTk1MzMtZjIxNDI5ZGJhODBlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDE1VDExMDcwOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWE4MzE4OWRmYjc1ZmQwM2E4YThmNWI5NmZkMzRmMTJkM2RiNjk5Y2FlYTE4M2I2YWZmOWQwNmEwMDYwYWUwYjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.WmhKlZPBPpz27zK365dv0jiVdnyyYEIFI_6vl__SyT8)
-
-
-
-
-
-
-
-#### Get a task
-![get_task](https://private-user-images.githubusercontent.com/17699193/372582308-d4317c00-b18b-4afc-b178-11495295a99f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4MDU1MDAsIm5iZiI6MTcyNzgwNTIwMCwicGF0aCI6Ii8xNzY5OTE5My8zNzI1ODIzMDgtZDQzMTdjMDAtYjE4Yi00YWZjLWIxNzgtMTE0OTUyOTVhOTlmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAxVDE3NTMyMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdhOGFjMTQ5YTc5MzJmMzgyZjM1MzZkYWQxY2RiMzg3YTQxZTdhYWJjNGMzOWEyZjk0ZTc3MTEwMTA5NDAyMjcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.T7cpiQcNBBre22MNNhkVNCdL5ib2k5qTvIc5dKKvCvo)
