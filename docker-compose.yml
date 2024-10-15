@@ -1,0 +1,28 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ./migrations/tasks/create_tasks_table.sql:/docker-entrypoint-initdb.d/create_tasks_table.sql
+    ports:
+      - "3306:3306"
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Assumes your Dockerfile is configured to docker rmuse Python 3.12
+    container_name: task_tracker_web
+    volumes:
+      - .:/task_tracker
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mysql-db
+    env_file:
+      - .env  # Load environment variables from .env file
+    command: uwsgi --ini /task_tracker/server/uwsgi/develop.ini  # Use uwsgi instead of runserver
