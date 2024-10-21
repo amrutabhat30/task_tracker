@@ -8,6 +8,7 @@ This project is a Django application for task management, using MySQL as the dat
 - [Setup](#setup)
 - [API Endpoints](#api-endpoints)
 - [Screenshots](#screenshots)
+- [Tests](#tests)
 
 
 ## Features
@@ -76,7 +77,6 @@ DELETE /tasks/{id}/: Delete a task by ID.
 
 #### Deleting a task that does not exist
 ![delete_task](assets/delete_task_error.png)
-
 
 ## Tests
 #### Run tests
